@@ -193,7 +193,7 @@ export default function Home() {
           </h1>
           
           <p 
-            className="text-xl md:text-2xl text-[var(--accent)] mb-8 animate-fade-in-up animation-delay-200"
+            className="text-xl md:text-2xl text-[var(--success)] mb-8 animate-fade-in-up animation-delay-200"
             style={{ fontFamily: 'var(--font-cormorant), serif' }}
           >
             Pulserende lys i gamma-frekvensområdet som ny behandling mod ADHD-symptomer hos Voksne
@@ -221,7 +221,7 @@ export default function Home() {
             </a>
             <a
               href="#hvordan"
-              className="px-8 py-4 border border-[var(--muted)]/30 text-[var(--foreground)] rounded-full hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-300"
+              className="px-8 py-4 border border-[var(--muted)]/30 text-[var(--foreground)] rounded-full hover:border-[var(--accent)] hover:text-[var(--success)] transition-all duration-300"
             >
               Sådan foregår det
             </a>
@@ -241,7 +241,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[var(--accent)] uppercase tracking-[0.2em] text-xs mb-3">
+              <p className="text-[var(--success)] uppercase tracking-[0.2em] text-xs mb-3">
                 Kort Fortalt
               </p>
               <h2 
@@ -269,7 +269,7 @@ export default function Home() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -277,7 +277,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -285,7 +285,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -293,7 +293,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -301,7 +301,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -318,7 +318,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <p className="text-[var(--accent)] uppercase tracking-[0.2em] text-xs mb-3">
+              <p className="text-[var(--success)] uppercase tracking-[0.2em] text-xs mb-3">
                 Teknologien
               </p>
               <h2 
@@ -367,7 +367,7 @@ export default function Home() {
                   className="w-full h-auto rounded-lg"
                 />
                 <p className="text-xs text-[var(--muted)] text-center mt-3">
-                  EVY LIGHT® enheden fra <a href="https://optoceutics.com" target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">Optoceutics</a>
+                  EVY LIGHT® enheden fra <a href="https://optoceutics.com" target="_blank" rel="noopener noreferrer" className="text-[var(--success)] hover:underline">Optoceutics</a>
                 </p>
               </div>
               {/* Person using device */}
@@ -485,8 +485,8 @@ export default function Home() {
 
             {/* Honest info about study design */}
             <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-[var(--sakura)]/30 flex items-center justify-center mb-6">
-                <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-full bg-[var(--bamboo)]/20 flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -497,19 +497,19 @@ export default function Home() {
               </p>
               <ul className="text-[var(--muted)] text-sm space-y-3">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--accent)] mt-0.5">•</span>
+                  <span className="text-[var(--success)] mt-0.5">•</span>
                   Halvdelen af deltagerne får aktiv lysterapi
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--accent)] mt-0.5">•</span>
+                  <span className="text-[var(--success)] mt-0.5">•</span>
                   Halvdelen får en placebo-enhed (uden aktiv behandling)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--accent)] mt-0.5">•</span>
+                  <span className="text-[var(--success)] mt-0.5">•</span>
                   Hverken du eller forskerne ved hvilken gruppe du er i
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--accent)] mt-0.5">•</span>
+                  <span className="text-[var(--success)] mt-0.5">•</span>
                   Dette design sikrer pålidelige, videnskabelige resultater
                 </li>
               </ul>
@@ -614,7 +614,7 @@ export default function Home() {
                 </div>
                 
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-wider text-[var(--accent)] mb-1">{member.role}</p>
+                  <p className="text-xs uppercase tracking-wider text-[var(--success)] mb-1">{member.role}</p>
                   <h3 className="text-xl font-medium text-[var(--foreground)] mb-1">{member.name}</h3>
                   <p className="text-sm text-[var(--muted)] mb-4">{member.title}</p>
                   
@@ -637,7 +637,7 @@ export default function Home() {
                     <span className="text-xs text-[var(--muted)]">{member.publications} Publikationer</span>
                     <a 
                       href={`mailto:${member.email}`}
-                      className="text-[var(--accent)] hover:text-[var(--accent-light)] transition-colors"
+                      className="text-[var(--success)] hover:text-[var(--accent-light)] transition-colors"
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -689,7 +689,7 @@ export default function Home() {
                 inden for 2-3 hverdage for at fortælle mere om forsøget.
               </p>
               <p className="text-sm text-[var(--muted)]">
-                Har du spørgsmål i mellemtiden? Skriv til <a href="mailto:clara@sdu.dk" className="text-[var(--accent)] hover:underline">clara@sdu.dk</a>
+                Har du spørgsmål i mellemtiden? Skriv til <a href="mailto:clara@sdu.dk" className="text-[var(--success)] hover:underline">clara@sdu.dk</a>
               </p>
             </div>
           ) : (
@@ -719,7 +719,7 @@ export default function Home() {
                       htmlFor="firstName"
                       className={`absolute left-0 transition-all duration-300 pointer-events-none
                         ${formData.firstName || activeField === 'firstName' 
-                          ? 'top-0 text-xs text-[var(--accent)]' 
+                          ? 'top-0 text-xs text-[var(--success)]' 
                           : 'top-4 text-[var(--muted)]'}`}
                     >
                       Fornavn
@@ -743,7 +743,7 @@ export default function Home() {
                       htmlFor="lastName"
                       className={`absolute left-0 transition-all duration-300 pointer-events-none
                         ${formData.lastName || activeField === 'lastName' 
-                          ? 'top-0 text-xs text-[var(--accent)]' 
+                          ? 'top-0 text-xs text-[var(--success)]' 
                           : 'top-4 text-[var(--muted)]'}`}
                     >
                       Efternavn
@@ -769,7 +769,7 @@ export default function Home() {
                     htmlFor="email"
                     className={`absolute left-0 transition-all duration-300 pointer-events-none
                       ${formData.email || activeField === 'email' 
-                        ? 'top-0 text-xs text-[var(--accent)]' 
+                        ? 'top-0 text-xs text-[var(--success)]' 
                         : 'top-4 text-[var(--muted)]'}`}
                   >
                     E-mail
@@ -793,7 +793,7 @@ export default function Home() {
                     htmlFor="phone"
                     className={`absolute left-0 transition-all duration-300 pointer-events-none
                       ${formData.phone || activeField === 'phone' 
-                        ? 'top-0 text-xs text-[var(--accent)]' 
+                        ? 'top-0 text-xs text-[var(--success)]' 
                         : 'top-4 text-[var(--muted)]'}`}
                   >
                     Telefon (valgfrit)
@@ -820,7 +820,7 @@ export default function Home() {
                     htmlFor="age"
                     className={`absolute left-0 transition-all duration-300 pointer-events-none
                       ${formData.age || activeField === 'age' 
-                        ? 'top-0 text-xs text-[var(--accent)]' 
+                        ? 'top-0 text-xs text-[var(--success)]' 
                         : 'top-4 text-[var(--muted)]'}`}
                   >
                     Alder
@@ -831,7 +831,7 @@ export default function Home() {
                 <div className="relative">
                   <label 
                     htmlFor="diagnosis"
-                    className="block text-xs text-[var(--accent)] mb-2"
+                    className="block text-xs text-[var(--success)] mb-2"
                   >
                     ADHD Status
                   </label>
@@ -872,7 +872,7 @@ export default function Home() {
                     htmlFor="message"
                     className={`absolute left-0 transition-all duration-300 pointer-events-none
                       ${formData.message || activeField === 'message' 
-                        ? 'top-0 text-xs text-[var(--accent)]' 
+                        ? 'top-0 text-xs text-[var(--success)]' 
                         : 'top-4 text-[var(--muted)]'}`}
                   >
                     Spørgsmål eller kommentarer (valgfrit)
