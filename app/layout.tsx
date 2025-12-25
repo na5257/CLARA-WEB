@@ -1,3 +1,4 @@
+// Yes, you can continue making the website here by modifying or adding imports and global styles as needed!
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
