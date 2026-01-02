@@ -202,9 +202,7 @@ export default function Home() {
           <div className="zen-divider animate-fade-in-up animation-delay-200" />
           
           <p className="text-lg md:text-xl text-[var(--muted)] max-w-2xl mx-auto mb-6 jp-text animate-fade-in-up animation-delay-300">
-            Vi undersøger, om en ny form for gamma-neurostimulering, leveret via pulserende lys 
-            med minimeret pulserende fornemmelse (invisible spectral flicker), kan forbedre 
-            koncentration og livskvalitet hos voksne med ADHD.
+            Vi undersøger en ny, lysbaseret behandlingsmetode, som kan hjælpe voksne med ADHD med at forbedre koncentration og livskvalitet
           </p>
 
           <p className="text-base text-[var(--foreground)]/70 max-w-xl mx-auto mb-12 animate-fade-in-up animation-delay-300">
