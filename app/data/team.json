@@ -24,14 +24,14 @@
       "email": "a.bikic@sdu.dk"
     },
     {
-      "id": "ingrid-baricic",
-      "name": "Ingrid Baricic",
+      "id": "ingrid-barisic",
+      "name": "Ingrid Barisic",
       "role": "Forsker",
       "title": "Psykolog og Forskningsassistent",
       "affiliation": "Syddansk Universitet",
-      "image": "/images/team/ingrid-baricic.jpg",
+      "image": "/images/team/ingrid-barisic.jpg",
       "hasImage": true,
-      "bio": "Ingrid Baricic er psykolog og en del af forskningsteamet ved Syddansk Universitet, hvor hun bidrager til den kliniske forskning inden for ADHD. Hun arbejder tæt sammen med forsøgslederen, og vil være kontaktpersonen for CLARA forsøget.",
+      "bio": "Ingrid Barisic er psykolog og en del af forskningsteamet ved Syddansk Universitet, hvor hun bidrager til den kliniske forskning inden for ADHD. Hun arbejder tæt sammen med forsøgslederen, og vil være kontaktpersonen for CLARA forsøget.",
       "credentials": [
         "Psykolog",
         "Good Clinical Practice (GCP) Certificeret"
@@ -42,7 +42,7 @@
         "Deltagerkoordinering"
       ],
       "publications": 5,
-      "email": "i.baricic@sdu.dk"
+      "email": "i.barisic@sdu.dk"
     }
   ],
   "studyInfo": {
