@@ -161,7 +161,7 @@ const translations = {
     // Hero Section
     'hero.subtitle': 'Clinical Research Study at Region of Southern Denmark',
     'hero.title': 'The CLARA Study',
-    'hero.headline': 'Pulsed light in the gamma frequency range as a new treatment for ADHD symptoms in adults',
+    'hero.headline': 'Pulsating light in the gamma frequency range as a new treatment for ADHD symptoms in adults',
     'hero.intro': 'We are investigating a new light-based treatment method that can help adults with ADHD improve concentration and quality of life',
     'hero.contribution': 'Your participation contributes to important research that can shape the future treatment of ADHD in adults.',
     'hero.cta.primary': 'Is this for you?',
