@@ -955,7 +955,7 @@ export default function Home() {
             <div>
               <h4 className="font-medium mb-4">{t('footer.contact')}</h4>
               <ul className="space-y-2 text-sm text-[var(--muted)]">
-                <li>Syddansk Universitet</li>
+                <li>Region Syddanmark</li>
                 <li>Campusvej 55</li>
                 <li>5230 Odense M</li>
                 <li className="pt-2">

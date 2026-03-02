@@ -21,7 +21,7 @@ const translations = {
     'nav.enroll': 'Tilmeld Interesse',
     
     // Hero Section
-    'hero.subtitle': 'Klinisk Forskningsstudie ved Syddansk Universitet',
+    'hero.subtitle': 'Klinisk Forskningsstudie ved Region Syddanmark',
     'hero.title': 'CLARA Forsøget',
     'hero.headline': 'Pulserende lys i gamma-frekvensområdet som ny behandling mod ADHD-symptomer hos Voksne',
     'hero.intro': 'Vi undersøger en ny, lysbaseret behandlingsmetode, som kan hjælpe voksne med ADHD med at forbedre koncentration og livskvalitet',
@@ -38,7 +38,7 @@ const translations = {
     'what.p2': 'Behandlingen er',
     'what.p2.bold': 'ikke-medicinsk',
     'what.p2.cont': 'og foregår i dit eget hjem med en lille, bærbar lysenhed. Teknologien bruger usynlig spektral flimmer for at minimere ubehag.',
-    'what.p3': 'Forsøget ledes af forskere ved Syddansk Universitet og følger strenge videnskabelige standarder for klinisk forskning.',
+    'what.p3': 'Forsøget ledes af forskere ved Region Syddanmark og følger strenge videnskabelige standarder for klinisk forskning.',
     'what.facts.title': 'Nøglefakta',
     'what.facts.duration': 'Varighed:',
     'what.facts.duration.value': '12 uger med daglig lysterapi',
@@ -118,7 +118,7 @@ const translations = {
     // Team
     'team.label': 'Mød Forskerne',
     'team.title': 'Hvem Står Bag?',
-    'team.intro': 'CLARA forsøget ledes af erfarne forskere ved Syddansk Universitet med speciale i ADHD og innovativ behandling.',
+    'team.intro': 'CLARA forsøget ledes af erfarne forskere ved Region Syddanmark med speciale i ADHD og innovativ behandling.',
     'team.publications': 'Publikationer',
     
     // Enrollment
@@ -144,10 +144,10 @@ const translations = {
     'enroll.form.privacy': 'Dine oplysninger behandles fortroligt og bruges kun til at kontakte dig om forsøget. Du kan til enhver tid bede om at få dem slettet.',
     
     // Footer
-    'footer.description': 'Et klinisk forskningsforsøg ved Syddansk Universitet, der undersøger lysterapi som behandling for ADHD hos voksne.',
+    'footer.description': 'Et klinisk forskningsforsøg ved Region Syddanmark, der undersøger lysterapi som behandling for ADHD hos voksne.',
     'footer.shortcuts': 'Genveje',
     'footer.contact': 'Kontakt',
-    'footer.copyright': '© 2024 CLARA Forsøget — Syddansk Universitet',
+    'footer.copyright': '© 2024 CLARA Forsøget — Region Syddanmark',
     'footer.privacy': 'Privatlivspolitik',
     'footer.data': 'Om Persondata',
   },
@@ -159,7 +159,7 @@ const translations = {
     'nav.enroll': 'Register Interest',
     
     // Hero Section
-    'hero.subtitle': 'Clinical Research Study at the University of Southern Denmark',
+    'hero.subtitle': 'Clinical Research Study at Region of Southern Denmark',
     'hero.title': 'The CLARA Study',
     'hero.headline': 'Pulsed light in the gamma frequency range as a new treatment for ADHD symptoms in adults',
     'hero.intro': 'We are investigating a new light-based treatment method that can help adults with ADHD improve concentration and quality of life',
@@ -176,7 +176,7 @@ const translations = {
     'what.p2': 'The treatment is',
     'what.p2.bold': 'non-medicinal',
     'what.p2.cont': 'and takes place in your own home with a small, portable light device. The technology uses invisible spectral flicker to minimize discomfort.',
-    'what.p3': 'The trial is led by researchers at the University of Southern Denmark and follows strict scientific standards for clinical research.',
+    'what.p3': 'The trial is led by researchers at Region of Southern Denmark and follows strict scientific standards for clinical research.',
     'what.facts.title': 'Key Facts',
     'what.facts.duration': 'Duration:',
     'what.facts.duration.value': '12 weeks of daily light therapy',
@@ -256,7 +256,7 @@ const translations = {
     // Team
     'team.label': 'Meet the Researchers',
     'team.title': 'Who is Behind This?',
-    'team.intro': 'The CLARA study is led by experienced researchers at the University of Southern Denmark specializing in ADHD and innovative treatment.',
+    'team.intro': 'The CLARA study is led by experienced researchers at Region of Southern Denmark specializing in ADHD and innovative treatment.',
     'team.publications': 'Publications',
     
     // Enrollment
@@ -282,10 +282,10 @@ const translations = {
     'enroll.form.privacy': 'Your information is treated confidentially and only used to contact you about the study. You can request deletion at any time.',
     
     // Footer
-    'footer.description': 'A clinical research trial at the University of Southern Denmark investigating light therapy as a treatment for ADHD in adults.',
+    'footer.description': 'A clinical research trial at Region of Southern Denmark investigating light therapy as a treatment for ADHD in adults.',
     'footer.shortcuts': 'Shortcuts',
     'footer.contact': 'Contact',
-    'footer.copyright': '© 2024 CLARA Study — University of Southern Denmark',
+    'footer.copyright': '© 2024 CLARA Study — Region of Southern Denmark',
     'footer.privacy': 'Privacy Policy',
     'footer.data': 'About Personal Data',
   }
