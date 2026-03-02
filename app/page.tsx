@@ -716,7 +716,7 @@ export default function Home() {
                 {t('enroll.success.p1')}
               </p>
               <p className="text-sm text-[var(--muted)]">
-                {t('enroll.success.p2')} <a href="mailto:clara@sdu.dk" className="text-[var(--success)] hover:underline">clara@sdu.dk</a>
+                {t('enroll.success.p2')} <a href="mailto:Ingrid.Barisic@rsyd.dk" className="text-[var(--success)] hover:underline">Ingrid.Barisic@rsyd.dk</a>
               </p>
             </div>
           ) : (
@@ -959,8 +959,13 @@ export default function Home() {
                 <li>Campusvej 55</li>
                 <li>5230 Odense M</li>
                 <li className="pt-2">
-                  <a href="mailto:clara@sdu.dk" className="hover:text-[var(--foreground)] transition-colors">
-                    clara@sdu.dk
+                  <a href="mailto:Ingrid.Barisic@rsyd.dk" className="hover:text-[var(--foreground)] transition-colors">
+                    Ingrid.Barisic@rsyd.dk
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+4561615593" className="hover:text-[var(--foreground)] transition-colors">
+                    Tlf: 61 61 55 93
                   </a>
                 </li>
               </ul>
