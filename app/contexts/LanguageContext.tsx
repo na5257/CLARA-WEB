@@ -77,7 +77,7 @@ const translations = {
     'how.step3.title': '12 Ugers Behandling',
     'how.step3.desc': 'Du bruger lyslampen derhjemme ca. 1 time dagligt.',
     'how.step4.title': 'Opfølgning',
-    'how.step4.desc': 'Evalueringsbesøg og opfølgning efter behandlingsperioden.',
+    'how.step4.desc': 'Opfølgningsbesøk efter behandlingsperioden.',
     
     // Benefits
     'benefits.title': 'Hvad Får Du?',
