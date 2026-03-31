@@ -601,7 +601,6 @@ export default function Home() {
                   { label: t('what.facts.duration'), value: t('what.facts.duration.value') },
                   { label: t('what.facts.time'), value: t('what.facts.time.value') },
                   { label: t('what.facts.visits'), value: t('what.facts.visits.value') },
-                  { label: t('what.facts.price'), value: t('what.facts.price.value') },
                   { label: t('what.facts.age'), value: t('what.facts.age.value') },
                 ].map((fact, i) => (
                   <div key={i} className="bg-gray-50 rounded-xl p-3">
