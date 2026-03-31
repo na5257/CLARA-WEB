@@ -71,7 +71,7 @@ const translations = {
     'benefits.item1': 'Gratis adgang til innovativ behandling',
     'benefits.item2': 'Grundig ADHD-vurdering af specialister',
     'benefits.item3': 'Løbende støtte og opfølgning',
-    'benefits.item4': 'Bidrag til forskning der hjælper andre',
+    'benefits.item4': 'Bidrag til forskning der kan hjælpe andre',
     'benefits.item5': 'Fuldfører du studiet, kan du fortsætte med lampen gratis i 12 måneder',
 
     // Important info
