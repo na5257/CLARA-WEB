@@ -1,23 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  /* Japanese-inspired color palette */
-  --color-ink: #1a1a1a;
-  --color-paper: #faf9f7;
-  --color-stone: #8b8680;
-  --color-bamboo: #6b7c5e;
-  --color-sakura: #e8c4c4;
-  --color-indigo: #3d4f7c;
-  --color-gold: #c9a962;
-  
+  /* Bold, clear color palette */
+  --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
+  --color-primary-light: #EFF6FF;
+  --color-orange: #F97316;
+  --color-orange-dark: #EA580C;
+  --color-green: #059669;
+  --color-green-light: #D1FAE5;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F0F7FF;
+
+  /* Legacy aliases */
+  --color-ink: var(--color-text);
+  --color-paper: var(--color-bg);
+  --color-stone: var(--color-muted);
+  --color-bamboo: var(--color-green);
+  --color-indigo: var(--color-primary);
+  --color-gold: var(--color-orange);
+
   /* Semantic colors */
-  --background: var(--color-paper);
-  --foreground: var(--color-ink);
-  --accent: var(--color-indigo);
-  --accent-light: #5a6d94;
-  --muted: var(--color-stone);
-  --highlight: var(--color-gold);
-  --success: var(--color-bamboo);
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+  --accent: var(--color-primary);
+  --accent-light: var(--color-primary-dark);
+  --muted: var(--color-muted);
+  --highlight: var(--color-orange);
+  --success: var(--color-green);
+
+  /* Legacy aliases (for backward compatibility) */
+  --color-ink: var(--color-text);
+  --color-paper: var(--color-bg);
+  --color-stone: var(--color-muted);
+  --color-bamboo: var(--color-green);
+  --color-sakura: #FBCFE8;
+  --color-indigo: var(--color-primary);
+  --color-gold: var(--color-orange);
 }
 
 @theme inline {
@@ -38,49 +59,50 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), "Hiragino Kaku Gothic Pro", "Yu Gothic", sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   line-height: 1.7;
   letter-spacing: 0.01em;
 }
 
-/* Japanese-inspired typography */
+/* Typography */
 .jp-heading {
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .jp-text {
   font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 1.9;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
 }
 
-/* Zen divider */
+/* Divider */
 .zen-divider {
   width: 60px;
-  height: 1px;
-  background: var(--color-stone);
-  margin: 2rem auto;
-  opacity: 0.5;
+  height: 3px;
+  background: var(--accent);
+  margin: 1.5rem auto;
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
-/* Subtle hover animations */
+/* Hover animations */
 .hover-lift {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.12);
 }
 
 /* Fade in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -89,7 +111,7 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0;
 }
 
@@ -100,22 +122,11 @@ body {
 .animation-delay-500 { animation-delay: 0.5s; }
 .animation-delay-600 { animation-delay: 0.6s; }
 
-/* Brush stroke accent */
+/* Brush stroke accent (kept for potential use) */
 .brush-accent {
   position: relative;
   display: inline-block;
-}
-
-.brush-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(90deg, var(--color-gold) 0%, transparent 100%);
-  opacity: 0.4;
-  border-radius: 4px;
+  color: var(--accent);
 }
 
 /* Form styles */
@@ -126,10 +137,19 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(61, 79, 124, 0.1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* Washi paper texture overlay */
+/* Gradient backgrounds */
+.gradient-warm {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 60%, #E0F2FE 100%);
+}
+
+.gradient-cool {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+}
+
+/* Washi texture (kept subtle) */
 .washi-texture {
   position: relative;
 }
@@ -139,17 +159,8 @@ input:focus, textarea:focus, select:focus {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.015;
+  opacity: 0.012;
   pointer-events: none;
-}
-
-/* Gradient backgrounds */
-.gradient-warm {
-  background: linear-gradient(135deg, var(--color-paper) 0%, #f5f0e8 100%);
-}
-
-.gradient-cool {
-  background: linear-gradient(135deg, #f0f4f8 0%, var(--color-paper) 100%);
 }
 
 /* Scrollbar styling */
@@ -158,14 +169,14 @@ input:focus, textarea:focus, select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-paper);
+  background: #F3F4F6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-stone);
+  background: #D1D5DB;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-ink);
+  background: var(--accent);
 }
