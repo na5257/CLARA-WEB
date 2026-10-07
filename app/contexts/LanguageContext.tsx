@@ -15,10 +15,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   da: {
     // Navigation
-    'nav.about': 'Om Forsøget',
-    'nav.how': 'Sådan Deltager Du',
+    'nav.about': 'Om forsøget',
+    'nav.how': 'Sådan deltager du',
     'nav.team': 'Forskerne',
-    'nav.enroll': 'Tilmeld Interesse',
+    'nav.enroll': 'Tilmeld interesse',
 
     // Hero Section
     'hero.subtitle': 'CLARA Forsøget · Region Syddanmark',
@@ -54,20 +54,20 @@ const translations = {
     'benefits.b4.desc': 'Grundig vurdering af specialister',
 
     // How it works
-    'how.label': 'Trin for Trin',
-    'how.title': 'Sådan Deltager Du',
-    'how.step1.title': 'Tilmeld Interesse',
+    'how.label': 'Trin for trin',
+    'how.title': 'Sådan deltager du',
+    'how.step1.title': 'Tilmeld interesse',
     'how.step1.desc': 'Udfyld formularen. Vi ringer dig op inden for få dage.',
     'how.step2.title': 'Screening',
     'how.step2.desc': 'Et kort møde hvor vi tjekker om forsøget passer til dig.',
-    'how.step3.title': '12 Ugers Brug',
+    'how.step3.title': '12 ugers brug',
     'how.step3.desc': 'Du bruger lyslampen derhjemme ca. 1 time dagligt.',
     'how.step3.bonus': 'Med mulighed for 12 måneder gratis brug efter studiet.',
     'how.step4.title': 'Opfølgning',
     'how.step4.desc': 'Opfølgningsbesøg efter behandlingsperioden.',
 
     // Benefits (detail, used in how-section)
-    'benefits.title': 'Hvad Får Du?',
+    'benefits.title': 'Hvad får du?',
     'benefits.item1': 'Gratis adgang til innovativ behandling',
     'benefits.item2': 'Grundig ADHD-vurdering af specialister',
     'benefits.item3': 'Løbende støtte og opfølgning',
@@ -75,7 +75,7 @@ const translations = {
     'benefits.item5': 'Fuldfører du studiet, kan du fortsætte med lampen gratis i 12 måneder',
 
     // Important info
-    'important.title': 'Vigtigt at Vide',
+    'important.title': 'Vigtigt at vide',
     'important.intro': 'Dette er et',
     'important.intro.bold': 'randomiseret, placebokontrolleret',
     'important.intro.cont': 'forsøg. Det betyder:',
@@ -86,14 +86,14 @@ const translations = {
     'important.note': 'Du kan til enhver tid trække dig fra forsøget uden begrundelse.',
 
     // Eligibility
-    'eligibility.title': 'Hvem Kan Deltage?',
-    'eligibility.can.title': 'Du Kan Deltage Hvis Du:',
+    'eligibility.title': 'Hvem kan deltage?',
+    'eligibility.can.title': 'Du kan deltage, hvis du:',
     'eligibility.can.item1': 'Er mellem 18 og 65 år',
     'eligibility.can.item2': 'Har en ADHD-diagnose (eller stærk mistanke)',
     'eligibility.can.item3': 'Kan bruge lyslampen dagligt derhjemme',
     'eligibility.can.item4': 'Kan møde op til 3-4 besøg i Odense, Vejle eller Aabenraa',
     'eligibility.can.item5': 'Har stabil medicinering (hvis du tager medicin)',
-    'eligibility.cannot.title': 'Du Kan Ikke Deltage Hvis Du:',
+    'eligibility.cannot.title': 'Du kan ikke deltage, hvis du:',
     'eligibility.cannot.item1': 'Har epilepsi eller er lysoverfølsom',
     'eligibility.cannot.item2': 'Er gravid eller planlægger graviditet',
     'eligibility.cannot.item3': 'Deltager i andre kliniske forsøg',
@@ -104,7 +104,7 @@ const translations = {
     'eligibility.note.cont': '— vi finder ud af det sammen.',
 
     // Enrollment
-    'enroll.label': 'Næste Skridt',
+    'enroll.label': 'Næste skridt',
     'enroll.title': 'Tilmeld din interesse nu',
     'enroll.intro': 'Det tager under 2 minutter. Vi kontakter dig inden for få dage.',
     'enroll.success.title': 'Tak – vi kontakter dig snart!',
@@ -116,7 +116,7 @@ const translations = {
     'enroll.form.email': 'E-mail',
     'enroll.form.phone': 'Telefon (valgfrit)',
     'enroll.form.age': 'Alder',
-    'enroll.form.diagnosis': 'ADHD Status',
+    'enroll.form.diagnosis': 'ADHD-status',
     'enroll.form.diagnosis.placeholder': 'Vælg en mulighed...',
     'enroll.form.diagnosis.diagnosed': 'Ja, jeg har en diagnose',
     'enroll.form.diagnosis.suspected': 'Nej, men jeg har mistanke om ADHD',
@@ -126,7 +126,7 @@ const translations = {
     'enroll.form.privacy': 'Dine oplysninger behandles fortroligt og bruges kun til at kontakte dig om forsøget.',
 
     // What is CLARA + Device (combined)
-    'about.label': 'Om Forsøget',
+    'about.label': 'Om forsøget',
     'about.title': 'En lyslampe mod ADHD – kan det virke?',
     'about.p1': 'Det undersøger vi i CLARA-forsøget. Lyslampen er lille, bærbar og nem at bruge derhjemme. Du kan bruge den mens du ser TV, arbejder ved computeren eller læser.',
     'about.p2': 'Behandlingen er ikke-medicinsk og foregår på dine præmisser. Forsøget ledes af erfarne forskere ved Region Syddanmark.',
@@ -146,8 +146,8 @@ const translations = {
     'what.facts.age.value': '18-65 år',
 
     // Team
-    'team.label': 'Mød Forskerne',
-    'team.title': 'Hvem Står Bag?',
+    'team.label': 'Mød forskerne',
+    'team.title': 'Hvem står bag?',
     'team.intro': 'CLARA forsøget ledes af erfarne forskere ved Region Syddanmark med speciale i ADHD og innovativ behandling.',
     'team.publications': 'Publikationer',
 
@@ -157,7 +157,7 @@ const translations = {
     'footer.contact': 'Kontakt',
     'footer.copyright': '© 2025 CLARA Forsøget — Region Syddanmark',
     'footer.privacy': 'Privatlivspolitik',
-    'footer.data': 'Om Persondata',
+    'footer.data': 'Om persondata',
   },
   en: {
     // Navigation
