@@ -23,7 +23,7 @@ const translations = {
     // Hero Section
     'hero.subtitle': 'CLARA Forsøget · Region Syddanmark',
     'hero.title': 'CLARA Forsøget',
-    'hero.headline': 'Ny behandling mod ADHD',
+    'hero.headline': 'Kan 40 Hz-lys hjælpe ved ADHD?',
     'hero.intro': 'Prøv en innovativ lyslampe derhjemme og bidrag til banebrydende forskning.',
     'hero.hook': 'Kæmper du med fokus, impulsivitet eller hverdagen?',
     'hero.hook.answer': 'Det er præcis det, vi ønsker at hjælpe med.',
@@ -46,7 +46,7 @@ const translations = {
     'benefits.strip.subtitle': 'Her er hvad det konkret betyder for dig at deltage',
     'benefits.b1.title': 'Helt gratis',
     'benefits.b1.desc': 'Ingen betaling eller skjulte krav',
-    'benefits.b2.title': 'Behandling hjemmefra',
+    'benefits.b2.title': 'Brug lampen hjemmefra',
     'benefits.b2.desc': 'Brug lyslampen i din egen stue',
     'benefits.b3.title': '1 time om dagen',
     'benefits.b3.desc': 'Mens du ser TV, arbejder ved computeren eller læser – ingen spildt tid.',
@@ -64,11 +64,11 @@ const translations = {
     'how.step3.desc': 'Du bruger lyslampen derhjemme ca. 1 time dagligt.',
     'how.step3.bonus': 'Med mulighed for 12 måneder gratis brug efter studiet.',
     'how.step4.title': 'Opfølgning',
-    'how.step4.desc': 'Opfølgningsbesøg efter behandlingsperioden.',
+    'how.step4.desc': 'Opfølgningsbesøg efter forsøgsperioden.',
 
     // Benefits (detail, used in how-section)
     'benefits.title': 'Hvad får du?',
-    'benefits.item1': 'Gratis adgang til innovativ behandling',
+    'benefits.item1': 'Gratis adgang til den innovative lyslampe',
     'benefits.item2': 'Grundig ADHD-vurdering af specialister',
     'benefits.item3': 'Løbende støtte og opfølgning',
     'benefits.item4': 'Bidrag til forskning der kan hjælpe andre',
@@ -79,8 +79,8 @@ const translations = {
     'important.intro': 'Dette er et',
     'important.intro.bold': 'randomiseret, placebokontrolleret',
     'important.intro.cont': 'forsøg. Det betyder:',
-    'important.item1': 'Halvdelen af deltagerne får aktiv lysterapi',
-    'important.item2': 'Halvdelen får en placebo-enhed (uden aktiv behandling)',
+    'important.item1': 'Halvdelen af deltagerne får en aktiv lyslampe',
+    'important.item2': 'Halvdelen får en placebo-enhed (uden aktiv 40 Hz-stimulering)',
     'important.item3': 'Hverken du eller forskerne ved hvilken gruppe du er i',
     'important.item4': 'Dette design sikrer pålidelige, videnskabelige resultater',
     'important.note': 'Du kan til enhver tid trække dig fra forsøget uden begrundelse.',
@@ -127,9 +127,9 @@ const translations = {
 
     // What is CLARA + Device (combined)
     'about.label': 'Om forsøget',
-    'about.title': 'En lyslampe mod ADHD – kan det virke?',
+    'about.title': 'Kan en lyslampe, der pulserer ved 40 Hz, hjælpe ved ADHD?',
     'about.p1': 'Det undersøger vi i CLARA-forsøget. Lyslampen er lille, bærbar og nem at bruge derhjemme. Du kan bruge den mens du ser TV, arbejder ved computeren eller læser.',
-    'about.p2': 'Behandlingen er ikke-medicinsk og foregår på dine præmisser. Forsøget ledes af erfarne forskere ved Region Syddanmark.',
+    'about.p2': 'Der indgår ingen medicin, og forsøget foregår på dine præmisser. Forsøget ledes af erfarne forskere ved Region Syddanmark.',
     'about.device.caption': 'EVY LIGHT® – nemt at bruge derhjemme',
 
     // Key facts (used in about section)
@@ -148,16 +148,21 @@ const translations = {
     // Team
     'team.label': 'Mød forskerne',
     'team.title': 'Hvem står bag?',
-    'team.intro': 'CLARA forsøget ledes af erfarne forskere ved Region Syddanmark med speciale i ADHD og innovativ behandling.',
+    'team.intro': 'CLARA-forsøget ledes af erfarne forskere ved Region Syddanmark med speciale i ADHD og lysstimulering.',
     'team.publications': 'Publikationer',
 
     // Footer
-    'footer.description': 'Et klinisk forskningsforsøg ved Region Syddanmark, der undersøger lysterapi som behandling for ADHD hos voksne.',
+    'footer.description': 'Et klinisk forskningsforsøg ved Region Syddanmark, der undersøger, om en lyslampe, der pulserer ved 40 Hz, kan hjælpe voksne med ADHD.',
     'footer.shortcuts': 'Genveje',
     'footer.contact': 'Kontakt',
     'footer.copyright': '© 2025 CLARA Forsøget — Region Syddanmark',
     'footer.privacy': 'Privatlivspolitik',
     'footer.data': 'Om persondata',
+    'footer.phone': 'Tlf.',
+    'about.device.alt': 'Person, der bruger EVY LIGHT®-lampen hjemme',
+    'benefits.activity.tv': 'TV',
+    'benefits.activity.computer': 'Computer',
+    'benefits.activity.reading': 'Læsning',
   },
   en: {
     // Navigation
@@ -167,11 +172,20 @@ const translations = {
     'nav.enroll': 'Register Interest',
 
     // Hero Section
-    'hero.subtitle': 'Clinical Trial · Region of Southern Denmark',
+    'hero.subtitle': 'The CLARA Study · Region of Southern Denmark',
     'hero.title': 'The CLARA Study',
-    'hero.headline': 'New ADHD treatment – free to try',
-    'hero.intro': 'Try an innovative light device at home and contribute to groundbreaking research. 1 hour a day. 12 weeks. Completely free.',
-    'hero.cta.primary': 'Sign up – it\'s free',
+    'hero.headline': 'Can 40 Hz light help with ADHD?',
+    'hero.intro': 'Try an innovative light device at home and contribute to groundbreaking research.',
+    'hero.hook': 'Do you struggle with focus, impulsivity or everyday life?',
+    'hero.hook.answer': 'That is exactly what we hope to help with.',
+    'hero.hook.pill1': 'Better focus',
+    'hero.hook.pill2': 'More energy',
+    'hero.hook.pill3': 'Easier everyday life',
+    'hero.intro2.pre': 'It is',
+    'hero.intro2.bold1': 'simple',
+    'hero.intro2.mid': 'to take part — and it is',
+    'hero.intro2.bold2': 'completely free',
+    'hero.cta.primary': 'Sign up',
     'hero.cta.secondary': 'How it works',
     'hero.badge.free': 'Free to participate',
     'hero.badge.home': 'At home',
@@ -180,10 +194,10 @@ const translations = {
 
     // Quick Benefits Strip
     'benefits.strip.title': 'What\'s in it for you?',
-    'benefits.strip.subtitle': 'Here\'s what participation concretely means for you',
+    'benefits.strip.subtitle': 'Here is what taking part actually means for you',
     'benefits.b1.title': 'Completely free',
     'benefits.b1.desc': 'No payment or hidden requirements',
-    'benefits.b2.title': 'Treatment at home',
+    'benefits.b2.title': 'Use the lamp at home',
     'benefits.b2.desc': 'Use the light device in your own living room',
     'benefits.b3.title': '1 hour a day',
     'benefits.b3.desc': 'While watching TV, working at your computer, or reading – no time wasted.',
@@ -201,11 +215,11 @@ const translations = {
     'how.step3.desc': 'Use the light device at home for approx. 1 hour daily.',
     'how.step3.bonus': 'With the option of 12 months free use after the study.',
     'how.step4.title': 'Follow-up',
-    'how.step4.desc': 'Follow-up visit after the treatment period.',
+    'how.step4.desc': 'Follow-up visit after the study period.',
 
     // Benefits (detail)
     'benefits.title': 'What Do You Get?',
-    'benefits.item1': 'Free access to innovative treatment',
+    'benefits.item1': 'Free access to the innovative light device',
     'benefits.item2': 'Thorough ADHD assessment by specialists',
     'benefits.item3': 'Ongoing support and follow-up',
     'benefits.item4': 'Contribute to research that helps others',
@@ -216,8 +230,8 @@ const translations = {
     'important.intro': 'This is a',
     'important.intro.bold': 'randomized, placebo-controlled',
     'important.intro.cont': 'trial. This means:',
-    'important.item1': 'Half of the participants receive active light therapy',
-    'important.item2': 'Half receive a placebo device (without active treatment)',
+    'important.item1': 'Half of the participants receive an active light device',
+    'important.item2': 'Half receive a placebo device (without active 40 Hz stimulation)',
     'important.item3': 'Neither you nor the researchers know which group you are in',
     'important.item4': 'This design ensures reliable, scientific results',
     'important.note': 'You can withdraw from the study at any time without giving a reason.',
@@ -264,15 +278,15 @@ const translations = {
 
     // What is CLARA + Device (combined)
     'about.label': 'About the Study',
-    'about.title': 'A light device for ADHD – can it work?',
+    'about.title': 'Can a light device pulsing at 40 Hz help with ADHD?',
     'about.p1': 'That\'s what we\'re investigating in the CLARA study. The light device is small, portable, and easy to use at home. You can use it while watching TV, working at the computer, or reading.',
-    'about.p2': 'The treatment is non-medicinal and happens on your terms. The study is led by experienced researchers at Region of Southern Denmark.',
+    'about.p2': 'No medication is involved, and participation happens on your terms. The study is led by experienced researchers at the Region of Southern Denmark.',
     'about.device.caption': 'EVY LIGHT® – easy to use at home',
 
     // Key facts
     'what.facts.title': 'Key Facts',
     'what.facts.duration': 'Duration:',
-    'what.facts.duration.value': '12 weeks of daily light therapy',
+    'what.facts.duration.value': '12 weeks of daily use',
     'what.facts.time': 'Time per day:',
     'what.facts.time.value': 'Approx. 1 hour',
     'what.facts.visits': 'Visits:',
@@ -285,16 +299,21 @@ const translations = {
     // Team
     'team.label': 'Meet the Researchers',
     'team.title': 'Who is Behind This?',
-    'team.intro': 'The CLARA study is led by experienced researchers at Region of Southern Denmark specializing in ADHD and innovative treatment.',
+    'team.intro': 'The CLARA study is led by experienced researchers at the Region of Southern Denmark specialising in ADHD and light stimulation.',
     'team.publications': 'Publications',
 
     // Footer
-    'footer.description': 'A clinical research trial at Region of Southern Denmark investigating light therapy as a treatment for ADHD in adults.',
+    'footer.description': 'A clinical research study at the Region of Southern Denmark investigating whether a light device pulsing at 40 Hz can help adults with ADHD.',
     'footer.shortcuts': 'Shortcuts',
     'footer.contact': 'Contact',
     'footer.copyright': '© 2025 CLARA Study — Region of Southern Denmark',
     'footer.privacy': 'Privacy Policy',
     'footer.data': 'About Personal Data',
+    'footer.phone': 'Tel.',
+    'about.device.alt': 'Person using the EVY LIGHT® device at home',
+    'benefits.activity.tv': 'TV',
+    'benefits.activity.computer': 'Computer',
+    'benefits.activity.reading': 'Reading',
   }
 };
 

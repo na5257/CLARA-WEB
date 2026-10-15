@@ -193,7 +193,7 @@ export default function Home() {
                 <p className="text-sm text-[var(--muted)]">{card.desc}</p>
                 {i === 1 && (
                   <div className="flex flex-wrap justify-center gap-1 mt-3">
-                    {['TV', 'Computer', 'Læsning'].map((activity) => (
+                    {[t('benefits.activity.tv'), t('benefits.activity.computer'), t('benefits.activity.reading')].map((activity) => (
                       <span key={activity} className="text-xs px-2 py-1 bg-blue-50 text-[var(--accent)] rounded-full font-medium">
                         {activity}
                       </span>
@@ -615,7 +615,7 @@ export default function Home() {
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src="/images/evy-light-in-use.jpg"
-                  alt="Person der bruger EVY LIGHT® lampen hjemme"
+                  alt={t('about.device.alt')}
                   className="w-full h-auto"
                   style={{ filter: 'brightness(1.05) contrast(1.02)' }}
                 />
@@ -674,13 +674,13 @@ export default function Home() {
                 </div>
 
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-wider text-[var(--accent)] font-bold mb-1">{member.role}</p>
+                  <p className="text-xs uppercase tracking-wider text-[var(--accent)] font-bold mb-1">{member.role[language]}</p>
                   <h3 className="text-xl font-bold text-[var(--foreground)] mb-1">{member.name}</h3>
-                  <p className="text-sm text-[var(--muted)] mb-4">{member.title}</p>
-                  <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">{member.bio}</p>
+                  <p className="text-sm text-[var(--muted)] mb-4">{member.title[language]}</p>
+                  <p className="text-sm text-[var(--muted)] leading-relaxed mb-4">{member.bio[language]}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {member.expertise.slice(0, 3).map((skill: string, i: number) => (
+                    {member.expertise[language].slice(0, 3).map((skill: string, i: number) => (
                       <span
                         key={i}
                         className="text-xs px-3 py-1 bg-blue-50 text-[var(--accent)] rounded-full font-medium"
@@ -750,7 +750,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="tel:+4561615593" className="hover:text-[var(--accent)] transition-colors">
-                    Tlf: 61 61 55 93
+                    {t('footer.phone')} 61 61 55 93
                   </a>
                 </li>
               </ul>

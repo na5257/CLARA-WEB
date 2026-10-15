@@ -3,53 +3,102 @@
     {
       "id": "aida-bikic",
       "name": "Aida Bikic",
-      "role": "Forsøgsleder",
-      "title": "Ph.D., Klinisk Psykologi",
+      "role": {
+        "da": "Forsøgsleder",
+        "en": "Principal investigator"
+      },
+      "title": {
+        "da": "Ph.d., klinisk psykologi",
+        "en": "PhD, Clinical Psychology"
+      },
       "affiliation": "Region Syddanmark",
       "image": "/images/team/aida-bikic.jpg",
       "hasImage": true,
-      "bio": "Dr. Aida Bikic er klinisk psykolog og lektor ved Region Syddanmark, specialiseret i neuroudviklingsforstyrrelser med særligt fokus på ADHD gennem hele livsspændet. Hendes nuværende forskning undersøger, hvordan lysbaseret neurostimulering kan støtte koncentration og daglig funktion hos voksne med ADHD.",
-      "credentials": [
-        "Ph.D. i Klinisk Psykologi",
-        "Certificeret ADHD-specialist",
-        "Autoriseret Klinisk Psykolog"
-      ],
-      "expertise": [
-        "ADHD Vurdering & Behandling",
-        "Neuroudviklingsforstyrrelser",
-        "Klinisk Forsøgsdesign",
-        "Lysterapiforskning"
-      ],
+      "bio": {
+        "da": "Dr. Aida Bikic er klinisk psykolog og lektor ved Region Syddanmark, specialiseret i neuroudviklingsforstyrrelser med særligt fokus på ADHD gennem hele livsspændet. Hendes nuværende forskning undersøger, hvordan lysbaseret neurostimulering kan støtte koncentration og daglig funktion hos voksne med ADHD.",
+        "en": "Dr Aida Bikic is a clinical psychologist and associate professor at the Region of Southern Denmark, specialising in neurodevelopmental disorders with a particular focus on ADHD across the lifespan. Her current research investigates how light-based neurostimulation may support concentration and daily functioning in adults with ADHD."
+      },
+      "credentials": {
+        "da": [
+          "Ph.d. i klinisk psykologi",
+          "Certificeret ADHD-specialist",
+          "Autoriseret klinisk psykolog"
+        ],
+        "en": [
+          "PhD in Clinical Psychology",
+          "Certified ADHD specialist",
+          "Licensed clinical psychologist"
+        ]
+      },
+      "expertise": {
+        "da": [
+          "ADHD-vurdering",
+          "Neuroudviklingsforstyrrelser",
+          "Klinisk forsøgsdesign",
+          "Forskning i lysstimulering"
+        ],
+        "en": [
+          "ADHD assessment",
+          "Neurodevelopmental disorders",
+          "Clinical trial design",
+          "Light stimulation research"
+        ]
+      },
       "publications": 45,
       "email": "a.bikic@sdu.dk"
     },
     {
       "id": "ingrid-barisic",
       "name": "Ingrid Barisic",
-      "role": "Forsker",
-      "title": "Psykolog og Forskningsassistent",
+      "role": {
+        "da": "Forsker",
+        "en": "Researcher"
+      },
+      "title": {
+        "da": "Psykolog og forskningsassistent",
+        "en": "Psychologist and research assistant"
+      },
       "affiliation": "Region Syddanmark",
       "image": "/images/team/ingrid-barisic.jpg",
       "hasImage": true,
-      "bio": "Ingrid Barisic er psykolog og en del af forskningsteamet ved Region Syddanmark, hvor hun bidrager til den kliniske forskning inden for ADHD. Hun arbejder tæt sammen med forsøgslederen, og vil være kontaktpersonen for CLARA forsøget.",
-      "credentials": [
-        "Psykolog",
-        "Good Clinical Practice (GCP) Certificeret"
-      ],
-      "expertise": [
-        "Klinisk Forskning",
-        "ADHD",
-        "Deltagerkoordinering"
-      ],
+      "bio": {
+        "da": "Ingrid Barisic er psykolog og en del af forskningsteamet ved Region Syddanmark, hvor hun bidrager til den kliniske forskning inden for ADHD. Hun arbejder tæt sammen med forsøgslederen og er kontaktpersonen for CLARA-forsøget.",
+        "en": "Ingrid Barisic is a psychologist and part of the research team at the Region of Southern Denmark, where she contributes to clinical research in ADHD. She works closely with the principal investigator and is the contact person for the CLARA study."
+      },
+      "credentials": {
+        "da": [
+          "Psykolog",
+          "Good Clinical Practice (GCP) certificeret"
+        ],
+        "en": [
+          "Psychologist",
+          "Good Clinical Practice (GCP) certified"
+        ]
+      },
+      "expertise": {
+        "da": [
+          "Klinisk forskning",
+          "ADHD",
+          "Deltagerkoordinering"
+        ],
+        "en": [
+          "Clinical research",
+          "ADHD",
+          "Participant coordination"
+        ]
+      },
       "publications": 5,
       "email": "i.barisic@sdu.dk"
     }
   ],
   "studyInfo": {
-    "name": "EVY Lys Studiet",
-    "fullTitle": "Evaluering af Effekten af EVY Lysterapi på Opmærksomhed og Eksekutiv Funktion hos Voksne med ADHD",
+    "name": "CLARA-forsøget",
+    "fullTitle": {
+      "da": "Evaluering af effekten af EVY LIGHT på opmærksomhed og eksekutiv funktion hos voksne med ADHD",
+      "en": "Evaluation of the effect of EVY LIGHT on attention and executive function in adults with ADHD"
+    },
     "phase": "Pivotstudie",
-    "status": "Rekrutterer Deltagere",
+    "status": "Rekrutterer deltagere",
     "targetEnrollment": 120,
     "currentEnrollment": 0,
     "estimatedCompletion": "2026",

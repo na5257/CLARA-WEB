@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CLARA Study | Light Therapy for ADHD",
-  description: "CLARA is a clinical trial at the University of Southern Denmark investigating whether light therapy can help adults with ADHD improve concentration and quality of life.",
-  keywords: ["ADHD", "light therapy", "clinical trial", "University of Southern Denmark", "adult ADHD", "CLARA"],
+  title: "CLARA-forsøget | Kan 40 Hz-lys hjælpe ved ADHD?",
+  description: "CLARA er et klinisk forskningsforsøg ved Region Syddanmark, der undersøger, om en lyslampe, der pulserer ved 40 Hz, kan hjælpe voksne med ADHD.",
+  keywords: ["ADHD", "lyslampe", "klinisk forsøg", "Region Syddanmark", "voksen ADHD", "CLARA"],
 };
 
 export default function RootLayout({
