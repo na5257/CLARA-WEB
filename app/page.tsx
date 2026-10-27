@@ -12,7 +12,7 @@ export default function Home() {
     email: "",
     phone: "",
     age: "",
-    diagnosis: "",
+    diagnosis: false,
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -24,9 +24,13 @@ export default function Home() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, type } = e.target;
+    const value = type === "checkbox" && e.target instanceof HTMLInputElement
+      ? e.target.checked
+      : e.target.value;
+    setFormData({ ...formData, [name]: value });
   };
 
   const benefitCards = [
@@ -512,30 +516,21 @@ export default function Home() {
                   </label>
                 </div>
 
-                {/* ADHD Status */}
-                <div className="relative">
-                  <label htmlFor="diagnosis" className="block text-xs text-[var(--accent)] font-semibold mb-2">
-                    {t('enroll.form.diagnosis')}
-                  </label>
-                  <div className="relative">
-                    <select
-                      name="diagnosis"
-                      id="diagnosis"
-                      value={formData.diagnosis}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-0 py-3 bg-white border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors appearance-none cursor-pointer text-[var(--foreground)]"
-                    >
-                      <option value="">{t('enroll.form.diagnosis.placeholder')}</option>
-                      <option value="diagnosed">{t('enroll.form.diagnosis.diagnosed')}</option>
-                      <option value="suspected">{t('enroll.form.diagnosis.suspected')}</option>
-                      <option value="process">{t('enroll.form.diagnosis.process')}</option>
-                    </select>
-                    <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
+                {/* Confirmed ADHD diagnosis */}
+                <label htmlFor="diagnosis" className="flex items-start gap-3 cursor-pointer pt-2">
+                  <input
+                    type="checkbox"
+                    name="diagnosis"
+                    id="diagnosis"
+                    checked={formData.diagnosis}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 w-4 h-4 accent-[var(--accent)]"
+                  />
+                  <span className="text-sm text-[var(--foreground)]">
+                    {t('enroll.form.diagnosis.confirmed')}
+                  </span>
+                </label>
 
                 {/* Message */}
                 <div className="relative">
