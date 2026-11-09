@@ -56,36 +56,6 @@ export default function Home() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const benefitCards = [
-    {
-      icon: (
-        <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-      title: t('benefits.b4.title'),
-      desc: t('benefits.b4.desc'),
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
-      title: t('benefits.b2.title'),
-      desc: t('benefits.b2.desc'),
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      title: t('benefits.b3.title'),
-      desc: t('benefits.b3.desc'),
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-white">
 
@@ -245,38 +215,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 2: Quick Benefits Strip ── */}
+      {/* ── SECTION 2: Participation (criteria + benefits) ── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-3">
-              {t('benefits.strip.title')}
+            <p className="text-[var(--accent)] uppercase tracking-[0.2em] text-xs font-bold mb-3">
+              {t('participation.label')}
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-4">
+              {t('participation.title')}
             </h2>
-            <p className="text-[var(--muted)]">{t('benefits.strip.subtitle')}</p>
+            <div className="zen-divider" />
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {benefitCards.map((card, i) => (
-              <div
-                key={i}
-                className="text-center p-6 rounded-2xl border border-gray-100 hover-lift bg-white"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  {card.icon}
-                </div>
-                <h3 className="font-bold text-[var(--foreground)] mb-2">{card.title}</h3>
-                <p className="text-sm text-[var(--muted)]">{card.desc}</p>
-                {i === 1 && (
-                  <div className="flex flex-wrap justify-center gap-1 mt-3">
-                    {[t('benefits.activity.tv'), t('benefits.activity.computer'), t('benefits.activity.reading')].map((activity) => (
-                      <span key={activity} className="text-xs px-2 py-1 bg-blue-50 text-[var(--accent)] rounded-full font-medium">
-                        {activity}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-[var(--success)]">
+              <h3 className="text-xl font-bold mb-2 text-[var(--foreground)]">{t('eligibility.title')}</h3>
+              <p className="text-sm font-semibold text-[var(--foreground)] mb-4">{t('eligibility.can.title')}</p>
+              <ul className="space-y-3">
+                {['eligibility.can.item1', 'eligibility.can.item2', 'eligibility.can.item3', 'eligibility.can.item4', 'eligibility.can.item5'].map((key) => (
+                  <li key={key} className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    <span className="text-[var(--muted)] text-sm">{t(key)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-[var(--success)]">
+              <h3 className="text-xl font-bold mb-5 text-[var(--foreground)]">{t('benefits.title')}</h3>
+              <ul className="space-y-3">
+                {['benefits.item1', 'benefits.item2', 'benefits.item3', 'benefits.item4'].map((key) => (
+                  <li key={key} className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    <span className="text-[var(--muted)] text-sm">{t(key)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
+          <p className="text-center text-[var(--muted)] text-sm mt-8">
+            {t('eligibility.note')} <strong className="text-[var(--accent)]">{t('eligibility.note.bold')}</strong> {t('eligibility.note.cont')}
+          </p>
         </div>
       </section>
 
@@ -343,60 +329,14 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Benefits + Important info */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-[var(--success)]">
-              <h3 className="text-xl font-bold mb-5 text-[var(--foreground)]">{t('benefits.title')}</h3>
-              <ul className="space-y-3">
-                {['benefits.item1', 'benefits.item2', 'benefits.item3', 'benefits.item4'].map((key) => (
-                  <li key={key} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-[var(--success)]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </span>
-                    <span className="text-[var(--muted)] text-sm">{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          {/* Important info */}
+          <div className="max-w-3xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-200">
               <h3 className="text-xl font-bold mb-4 text-[var(--foreground)]">{t('important.title')}</h3>
               <p className="text-[var(--muted)] text-sm leading-relaxed">{t('important.text')}</p>
               <p className="text-[var(--muted)] text-sm mt-4 italic">{t('important.note')}</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 4: Eligibility ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-[var(--foreground)]">
-            {t('eligibility.title')}
-          </h2>
-          <div className="max-w-xl mx-auto">
-            <div className="bg-green-50 p-6 rounded-2xl">
-              <h4 className="font-bold text-[var(--success)] mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-                </svg>
-                {t('eligibility.can.title')}
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                {['eligibility.can.item1', 'eligibility.can.item2', 'eligibility.can.item3', 'eligibility.can.item4', 'eligibility.can.item5'].map((key) => (
-                  <li key={key} className="flex items-start gap-2">
-                    <span className="text-[var(--success)] font-bold mt-0.5">✓</span>
-                    {t(key)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <p className="text-center text-[var(--muted)] text-sm mt-8">
-            {t('eligibility.note')} <strong className="text-[var(--accent)]">{t('eligibility.note.bold')}</strong> {t('eligibility.note.cont')}
-          </p>
         </div>
       </section>
 

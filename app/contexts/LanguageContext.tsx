@@ -40,16 +40,6 @@ const translations = {
     'hero.badge.nomeds': 'Ingen medicin',
 
     // Quick Benefits Strip
-    'benefits.strip.title': 'Hvad får du ud af det?',
-    'benefits.strip.subtitle': 'Her er hvad det konkret betyder for dig at deltage',
-    'benefits.b1.title': 'Helt gratis',
-    'benefits.b1.desc': 'Ingen betaling eller skjulte krav',
-    'benefits.b2.title': 'Brug lampen hjemmefra',
-    'benefits.b2.desc': 'Brug lyslampen i din egen stue',
-    'benefits.b3.title': '1 time om dagen',
-    'benefits.b3.desc': 'Mens du ser TV, arbejder ved computeren eller læser – ingen spildt tid.',
-    'benefits.b4.title': 'Faglig ADHD-vurdering',
-    'benefits.b4.desc': 'Grundig vurdering af specialister',
 
     // How it works
     'how.label': 'Trin for trin',
@@ -65,6 +55,8 @@ const translations = {
     'how.step4.desc': 'Opfølgningsbesøg efter forsøgsperioden.',
 
     // Benefits (detail, used in how-section)
+    'participation.label': 'Om deltagelse',
+    'participation.title': 'Kriterier og fordele',
     'benefits.title': 'Hvad får du?',
     'benefits.item1': 'Gratis adgang til den innovative lyslampe',
     'benefits.item2': 'Grundig ADHD-vurdering af specialister',
@@ -143,9 +135,6 @@ const translations = {
     'footer.data': 'Om persondata',
     'footer.phone': 'Tlf.',
     'about.device.alt': 'Person, der bruger EVY LIGHT®-lampen hjemme',
-    'benefits.activity.tv': 'TV',
-    'benefits.activity.computer': 'Computer',
-    'benefits.activity.reading': 'Læsning',
   },
   en: {
     // Navigation
@@ -174,16 +163,6 @@ const translations = {
     'hero.badge.nomeds': 'No medication',
 
     // Quick Benefits Strip
-    'benefits.strip.title': 'What\'s in it for you?',
-    'benefits.strip.subtitle': 'Here is what taking part actually means for you',
-    'benefits.b1.title': 'Completely free',
-    'benefits.b1.desc': 'No payment or hidden requirements',
-    'benefits.b2.title': 'Use the lamp at home',
-    'benefits.b2.desc': 'Use the light device in your own living room',
-    'benefits.b3.title': '1 hour a day',
-    'benefits.b3.desc': 'While watching TV, working at your computer, or reading – no time wasted.',
-    'benefits.b4.title': 'Expert ADHD assessment',
-    'benefits.b4.desc': 'Thorough assessment by specialists',
 
     // How it works
     'how.label': 'Step by Step',
@@ -199,6 +178,8 @@ const translations = {
     'how.step4.desc': 'Follow-up visit after the study period.',
 
     // Benefits (detail)
+    'participation.label': 'About participation',
+    'participation.title': 'Criteria and benefits',
     'benefits.title': 'What Do You Get?',
     'benefits.item1': 'Free access to the innovative light device',
     'benefits.item2': 'Thorough ADHD assessment by specialists',
@@ -277,9 +258,6 @@ const translations = {
     'footer.data': 'About Personal Data',
     'footer.phone': 'Tel.',
     'about.device.alt': 'Person using the EVY LIGHT® device at home',
-    'benefits.activity.tv': 'TV',
-    'benefits.activity.computer': 'Computer',
-    'benefits.activity.reading': 'Reading',
   }
 };
 
