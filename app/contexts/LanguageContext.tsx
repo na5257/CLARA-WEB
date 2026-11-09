@@ -119,7 +119,9 @@ const translations = {
     'enroll.form.diagnosis.confirmed': 'Jeg har en bekræftet ADHD-diagnose',
     'enroll.form.message': 'Spørgsmål eller kommentarer (valgfrit)',
     'enroll.form.submit': 'Tilmeld mig – det er gratis',
-    'enroll.form.privacy': 'Dine oplysninger behandles fortroligt og bruges kun til at kontakte dig om forsøget.',
+    'enroll.form.sending': 'Sender…',
+    'enroll.form.error': 'Tilmeldingen kunne ikke sendes. Prøv igen, eller skriv til Ingrid.Barisic@rsyd.dk.',
+    'enroll.form.privacy': 'Dine oplysninger sendes til forsøgets kontaktperson og bruges kun til at kontakte dig om forsøget.',
 
     // What is CLARA + Device (combined)
     'about.label': 'Om forsøget',
@@ -266,7 +268,9 @@ const translations = {
     'enroll.form.diagnosis.confirmed': 'I have a confirmed ADHD diagnosis',
     'enroll.form.message': 'Questions or comments (optional)',
     'enroll.form.submit': 'Sign me up – it\'s free',
-    'enroll.form.privacy': 'Your information is treated confidentially and only used to contact you about the study.',
+    'enroll.form.sending': 'Sending…',
+    'enroll.form.error': 'The signup could not be sent. Please try again, or email Ingrid.Barisic@rsyd.dk.',
+    'enroll.form.privacy': 'Your information is sent to the study contact and only used to contact you about the study.',
 
     // What is CLARA + Device (combined)
     'about.label': 'About the Study',

@@ -16,11 +16,40 @@ export default function Home() {
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [activeField, setActiveField] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (isSubmitting) return;
+
+    const honeypot = (e.currentTarget.elements.namedItem("company") as HTMLInputElement | null)?.value ?? "";
+
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          company: honeypot,
+          language,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("send_failed");
+      }
+
+      setFormSubmitted(true);
+    } catch {
+      setSubmitError(t("enroll.form.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -390,6 +419,15 @@ export default function Home() {
               </p>
 
               <div className="space-y-7">
+                <input
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
+                />
+
                 {/* Name */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative">
@@ -556,12 +594,19 @@ export default function Home() {
                   </label>
                 </div>
 
+                {submitError && (
+                  <p className="text-sm text-red-600 text-center" role="alert">
+                    {submitError}
+                  </p>
+                )}
+
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[var(--highlight)] text-white rounded-full hover:bg-orange-600 transition-all duration-300 hover-lift font-bold text-lg tracking-wide shadow-md shadow-orange-100"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-[var(--highlight)] text-white rounded-full hover:bg-orange-600 transition-all duration-300 hover-lift font-bold text-lg tracking-wide shadow-md shadow-orange-100 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {t('enroll.form.submit')}
+                  {isSubmitting ? t('enroll.form.sending') : t('enroll.form.submit')}
                 </button>
 
                 <p className="text-xs text-[var(--muted)] text-center">
