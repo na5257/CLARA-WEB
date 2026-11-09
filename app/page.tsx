@@ -3,8 +3,6 @@
 import { useState } from "react";
 import teamData from "./data/team.json";
 import { useLanguage } from "./contexts/LanguageContext";
-import { ENROLL_EMAIL } from "./enroll-config";
-
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -31,42 +29,17 @@ export default function Home() {
     setIsSubmitting(true);
 
     try {
-      if (honeypot) {
-        setFormSubmitted(true);
-        return;
-      }
+      const response = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          company: honeypot,
+          language,
+        }),
+      });
 
-      const response = await fetch(
-        `https://formsubmit.co/ajax/${ENROLL_EMAIL}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            _subject: `Ny CLARA-tilmelding: ${formData.firstName} ${formData.lastName}`,
-            _template: "table",
-            _captcha: "false",
-            _replyto: formData.email,
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            telefon: formData.phone || "Ikke oplyst",
-            alder: String(formData.age),
-            diagnose: "Bekræftet ADHD-diagnose",
-            kommentar: formData.message || "Ingen",
-            sprog: language === "en" ? "English" : "Dansk",
-          }),
-        }
-      );
-
-      const result = await response.json().catch(() => ({}));
-      const sent = result.success === true || result.success === "true";
-      const needsActivation =
-        typeof result.message === "string" &&
-        result.message.toLowerCase().includes("activat");
-
-      if (!sent && !needsActivation) {
+      if (!response.ok) {
         throw new Error("send_failed");
       }
 

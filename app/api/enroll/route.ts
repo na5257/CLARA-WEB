@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { ENROLL_EMAIL } from "../../enroll-config";
 
+// Without a verified domain, Resend only delivers from this sender to the
+// email address that owns the Resend account.
+const FROM = process.env.RESEND_FROM || "CLARA tilmelding <onboarding@resend.dev>";
+
 function asString(value: unknown, max: number) {
   if (typeof value !== "string") return "";
   return value.trim().slice(0, max);
@@ -39,50 +43,53 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "invalid" }, { status: 400 });
     }
 
-    const payload = {
-      _subject: `Ny CLARA-tilmelding: ${firstName} ${lastName}`,
-      _template: "table",
-      _captcha: "false",
-      _replyto: email,
-      name: `${firstName} ${lastName}`,
-      email,
-      telefon: phone || "Ikke oplyst",
-      alder: String(age),
-      diagnose: "Bekræftet ADHD-diagnose",
-      kommentar: message || "Ingen",
-      sprog: language,
-    };
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is not set");
+      return NextResponse.json({ error: "send_failed" }, { status: 500 });
+    }
+
+    const text = [
+      "Ny tilmelding til CLARA-forsøget",
+      "",
+      `Navn: ${firstName} ${lastName}`,
+      `E-mail: ${email}`,
+      `Telefon: ${phone || "Ikke oplyst"}`,
+      `Alder: ${age}`,
+      "Diagnose: Bekræftet ADHD-diagnose",
+      `Sprog på siden: ${language}`,
+      "",
+      "Kommentar:",
+      message || "Ingen",
+    ].join("\n");
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
 
-    const response = await fetch(
-      `https://formsubmit.co/ajax/${ENROLL_EMAIL}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          Origin: "https://clara-web-phi.vercel.app",
-          Referer: "https://clara-web-phi.vercel.app/",
-        },
-        body: JSON.stringify(payload),
-        signal: controller.signal,
-      }
-    ).finally(() => clearTimeout(timeout));
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: FROM,
+        to: [ENROLL_EMAIL],
+        reply_to: email,
+        subject: `Ny CLARA-tilmelding: ${firstName} ${lastName}`,
+        text,
+      }),
+      signal: controller.signal,
+    }).finally(() => clearTimeout(timeout));
 
-    const result = await response.json().catch(() => ({}));
-    const sent = result.success === true || result.success === "true";
-    const needsActivation =
-      typeof result.message === "string" &&
-      result.message.toLowerCase().includes("activat");
-
-    if (!sent && !needsActivation) {
+    if (!response.ok) {
+      console.error("Resend error", response.status, await response.text().catch(() => ""));
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Enroll failed", error);
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
 }
