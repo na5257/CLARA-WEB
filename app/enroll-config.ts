@@ -1,1 +1,1 @@
-export const ENROLL_EMAIL = "nikolas.johansen.aasheim@regionh.dk";
+export const ENROLL_EMAIL = "Ingrid.Barisic@rsyd.dk";
