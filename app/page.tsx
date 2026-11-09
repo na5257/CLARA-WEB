@@ -11,7 +11,6 @@ export default function Home() {
     email: "",
     phone: "",
     age: "",
-    diagnosis: false,
     message: "",
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -54,11 +53,7 @@ export default function Home() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, type } = e.target;
-    const value = type === "checkbox" && e.target instanceof HTMLInputElement
-      ? e.target.checked
-      : e.target.value;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const benefitCards = [
@@ -159,7 +154,7 @@ export default function Home() {
       </nav>
 
       {/* ── SECTION 1: Hero ── */}
-      <section id="about" className="min-h-screen flex items-center justify-center pt-20 gradient-warm">
+      <section className="min-h-screen flex items-center justify-center pt-20 gradient-warm">
         <div className="max-w-4xl mx-auto px-6 py-24 text-center">
           <div className="animate-fade-in-up">
             <span className="inline-block text-[var(--accent)] text-xs font-bold uppercase tracking-[0.2em] bg-white/80 px-4 py-2 rounded-full border border-blue-100 mb-8">
@@ -200,16 +195,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SECTION 6: About + Device (combined, simplified) ── */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="text-[var(--accent)] uppercase tracking-[0.2em] text-xs font-bold mb-3">
+                {t('about.label')}
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-6">
+                {t('about.title')}
+              </h2>
+              <p className="text-[var(--muted)] mb-4 leading-relaxed">
+                {t('about.p1')}
+              </p>
+              <p className="text-[var(--muted)] mb-6 leading-relaxed">
+                {t('about.p2')}
+              </p>
+              {/* Key facts as simple pills */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: t('what.facts.duration'), value: t('what.facts.duration.value') },
+                  { label: t('what.facts.time'), value: t('what.facts.time.value') },
+                  { label: t('what.facts.visits'), value: t('what.facts.visits.value') },
+                  { label: t('what.facts.age'), value: t('what.facts.age.value') },
+                ].map((fact, i) => (
+                  <div key={i} className="bg-gray-50 rounded-xl p-3">
+                    <p className="text-xs text-[var(--muted)] font-medium">{fact.label}</p>
+                    <p className="text-sm font-bold text-[var(--foreground)]">{fact.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="/images/evy-light-in-use.jpg"
+                  alt={t('about.device.alt')}
+                  className="w-full h-auto"
+                  style={{ filter: 'brightness(1.05) contrast(1.02)' }}
+                />
+              </div>
+              <p className="text-xs text-[var(--muted)] text-center">
+                {t('about.device.caption')} –{' '}
+                <a
+                  href="https://optoceutics.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--accent)] hover:underline"
+                >
+                  Optoceutics
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SECTION 2: Quick Benefits Strip ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--foreground)] mb-3">
-              {t('hero.hook')}
+              {t('benefits.strip.title')}
             </h2>
-            <p className="text-lg text-[var(--accent)] font-semibold mb-6">
-              {t('hero.hook.answer')}
-            </p>
             <p className="text-[var(--muted)]">{t('benefits.strip.subtitle')}</p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
@@ -321,17 +371,7 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-200">
               <h3 className="text-xl font-bold mb-4 text-[var(--foreground)]">{t('important.title')}</h3>
-              <p className="text-[var(--muted)] text-sm mb-4">
-                {t('important.intro')} <strong>{t('important.intro.bold')}</strong> {t('important.intro.cont')}
-              </p>
-              <ul className="space-y-3">
-                {['important.item1', 'important.item2', 'important.item3', 'important.item4'].map((key) => (
-                  <li key={key} className="flex items-start gap-2 text-[var(--muted)] text-sm">
-                    <span className="text-[var(--accent)] mt-0.5">•</span>
-                    {t(key)}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[var(--muted)] text-sm leading-relaxed">{t('important.text')}</p>
               <p className="text-[var(--muted)] text-sm mt-4 italic">{t('important.note')}</p>
             </div>
           </div>
@@ -344,7 +384,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-[var(--foreground)]">
             {t('eligibility.title')}
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-xl mx-auto">
             <div className="bg-green-50 p-6 rounded-2xl">
               <h4 className="font-bold text-[var(--success)] mb-4 flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -356,22 +396,6 @@ export default function Home() {
                 {['eligibility.can.item1', 'eligibility.can.item2', 'eligibility.can.item3', 'eligibility.can.item4', 'eligibility.can.item5'].map((key) => (
                   <li key={key} className="flex items-start gap-2">
                     <span className="text-[var(--success)] font-bold mt-0.5">✓</span>
-                    {t(key)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-red-50 p-6 rounded-2xl">
-              <h4 className="font-bold text-red-500 mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                {t('eligibility.cannot.title')}
-              </h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                {['eligibility.cannot.item1', 'eligibility.cannot.item2', 'eligibility.cannot.item3', 'eligibility.cannot.item4', 'eligibility.cannot.item5'].map((key) => (
-                  <li key={key} className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold mt-0.5">✗</span>
                     {t(key)}
                   </li>
                 ))}
@@ -553,22 +577,6 @@ export default function Home() {
                   </label>
                 </div>
 
-                {/* Confirmed ADHD diagnosis */}
-                <label htmlFor="diagnosis" className="flex items-start gap-3 cursor-pointer pt-2">
-                  <input
-                    type="checkbox"
-                    name="diagnosis"
-                    id="diagnosis"
-                    checked={formData.diagnosis}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 w-4 h-4 accent-[var(--accent)]"
-                  />
-                  <span className="text-sm text-[var(--foreground)]">
-                    {t('enroll.form.diagnosis.confirmed')}
-                  </span>
-                </label>
-
                 {/* Message */}
                 <div className="relative">
                   <textarea
@@ -614,64 +622,6 @@ export default function Home() {
               </div>
             </form>
           )}
-        </div>
-      </section>
-
-      {/* ── SECTION 6: About + Device (combined, simplified) ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-[var(--accent)] uppercase tracking-[0.2em] text-xs font-bold mb-3">
-                {t('about.label')}
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-6">
-                {t('about.title')}
-              </h2>
-              <p className="text-[var(--muted)] mb-4 leading-relaxed">
-                {t('about.p1')}
-              </p>
-              <p className="text-[var(--muted)] mb-6 leading-relaxed">
-                {t('about.p2')}
-              </p>
-              {/* Key facts as simple pills */}
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { label: t('what.facts.duration'), value: t('what.facts.duration.value') },
-                  { label: t('what.facts.time'), value: t('what.facts.time.value') },
-                  { label: t('what.facts.visits'), value: t('what.facts.visits.value') },
-                  { label: t('what.facts.age'), value: t('what.facts.age.value') },
-                ].map((fact, i) => (
-                  <div key={i} className="bg-gray-50 rounded-xl p-3">
-                    <p className="text-xs text-[var(--muted)] font-medium">{fact.label}</p>
-                    <p className="text-sm font-bold text-[var(--foreground)]">{fact.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src="/images/evy-light-in-use.jpg"
-                  alt={t('about.device.alt')}
-                  className="w-full h-auto"
-                  style={{ filter: 'brightness(1.05) contrast(1.02)' }}
-                />
-              </div>
-              <p className="text-xs text-[var(--muted)] text-center">
-                {t('about.device.caption')} –{' '}
-                <a
-                  href="https://optoceutics.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--accent)] hover:underline"
-                >
-                  Optoceutics
-                </a>
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 

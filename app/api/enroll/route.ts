@@ -39,10 +39,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "invalid" }, { status: 400 });
     }
 
-    if (body.diagnosis !== true) {
-      return NextResponse.json({ error: "invalid" }, { status: 400 });
-    }
-
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error("RESEND_API_KEY is not set");
@@ -56,7 +52,6 @@ export async function POST(request: Request) {
       `E-mail: ${email}`,
       `Telefon: ${phone || "Ikke oplyst"}`,
       `Alder: ${age}`,
-      "Diagnose: Bekræftet ADHD-diagnose",
       `Sprog på siden: ${language}`,
       "",
       "Kommentar:",
