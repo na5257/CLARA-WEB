@@ -238,15 +238,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-xs text-[var(--muted)] text-center">
-                {t('about.device.caption')} –{' '}
-                <a
-                  href="https://optoceutics.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--accent)] hover:underline"
-                >
-                  Optoceutics
-                </a>
+                {t('about.device.caption')}
               </p>
             </div>
           </div>
