@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-
-const ENROLL_EMAIL = "Ingrid.Barisic@rsyd.dk";
+import { ENROLL_EMAIL } from "../../enroll-config";
 
 function asString(value: unknown, max: number) {
   if (typeof value !== "string") return "";

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import teamData from "./data/team.json";
 import { useLanguage } from "./contexts/LanguageContext";
+import { ENROLL_EMAIL } from "./enroll-config";
 
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
@@ -36,7 +37,7 @@ export default function Home() {
       }
 
       const response = await fetch(
-        "https://formsubmit.co/ajax/Ingrid.Barisic@rsyd.dk",
+        `https://formsubmit.co/ajax/${ENROLL_EMAIL}`,
         {
           method: "POST",
           headers: {
