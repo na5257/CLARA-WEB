@@ -64,13 +64,21 @@ export async function POST(request: Request) {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Origin: "https://clara-web-phi.vercel.app",
+          Referer: "https://clara-web-phi.vercel.app/",
         },
         body: JSON.stringify(payload),
         signal: controller.signal,
       }
     ).finally(() => clearTimeout(timeout));
 
-    if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    const sent = result.success === true || result.success === "true";
+    const needsActivation =
+      typeof result.message === "string" &&
+      result.message.toLowerCase().includes("activat");
+
+    if (!sent && !needsActivation) {
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
     }
 
