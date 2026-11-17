@@ -1,60 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import teamData from "./data/team.json";
 import { useLanguage } from "./contexts/LanguageContext";
+
+const ENROLL_FORM_URL =
+  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=aNZslli7PEWBGsJpdmVihaGP0n9o7lVPvk05UUIqoOtUQ09HN1VBU0kxNkNEVEM5OERETUk2TFdMQS4u";
+
 export default function Home() {
   const { language, setLanguage, t } = useLanguage();
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    age: "",
-    message: "",
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-  const [activeField, setActiveField] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    const honeypot = (e.currentTarget.elements.namedItem("company") as HTMLInputElement | null)?.value ?? "";
-
-    setSubmitError(null);
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/enroll", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          company: honeypot,
-          language,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("send_failed");
-      }
-
-      setFormSubmitted(true);
-    } catch {
-      setSubmitError(t("enroll.form.error"));
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -351,209 +304,24 @@ export default function Home() {
             <p className="text-blue-100 text-lg">{t('enroll.intro')}</p>
           </div>
 
-          {formSubmitted ? (
-            <div className="bg-white p-12 rounded-2xl shadow-xl text-center">
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-[var(--success)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-[var(--foreground)]">{t('enroll.success.title')}</h3>
-              <p className="text-[var(--muted)] mb-4">{t('enroll.success.p1')}</p>
-              <p className="text-sm text-[var(--muted)]">
-                {t('enroll.success.p2')}{' '}
-                <a href="mailto:Ingrid.Barisic@rsyd.dk" className="text-[var(--accent)] hover:underline font-medium">
-                  Ingrid.Barisic@rsyd.dk
-                </a>
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-2xl shadow-xl">
-              <p className="text-sm text-[var(--muted)] text-center mb-8 font-medium">
-                {t('enroll.form.disclaimer')}
-              </p>
+          <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl text-center">
+            <p className="text-sm text-[var(--muted)] mb-8 font-medium">
+              {t('enroll.form.disclaimer')}
+            </p>
 
-              <div className="space-y-7">
-                <input
-                  type="text"
-                  name="company"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
-                />
+            <a
+              href={ENROLL_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-4 bg-[var(--highlight)] text-white rounded-full hover:bg-orange-600 transition-all duration-300 hover-lift font-bold text-lg tracking-wide shadow-md shadow-orange-100"
+            >
+              {t('enroll.form.submit')}
+            </a>
 
-                {/* Name */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="firstName"
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      onFocus={() => setActiveField('firstName')}
-                      onBlur={() => setActiveField(null)}
-                      required
-                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors placeholder-transparent"
-                      placeholder={t('enroll.form.firstName')}
-                    />
-                    <label
-                      htmlFor="firstName"
-                      className={`absolute left-0 transition-all duration-300 pointer-events-none
-                        ${formData.firstName || activeField === 'firstName'
-                          ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                          : 'top-4 text-[var(--muted)]'}`}
-                    >
-                      {t('enroll.form.firstName')}
-                    </label>
-                  </div>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="lastName"
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      onFocus={() => setActiveField('lastName')}
-                      onBlur={() => setActiveField(null)}
-                      required
-                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors placeholder-transparent"
-                      placeholder={t('enroll.form.lastName')}
-                    />
-                    <label
-                      htmlFor="lastName"
-                      className={`absolute left-0 transition-all duration-300 pointer-events-none
-                        ${formData.lastName || activeField === 'lastName'
-                          ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                          : 'top-4 text-[var(--muted)]'}`}
-                    >
-                      {t('enroll.form.lastName')}
-                    </label>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="relative">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    onFocus={() => setActiveField('email')}
-                    onBlur={() => setActiveField(null)}
-                    required
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors placeholder-transparent"
-                    placeholder={t('enroll.form.email')}
-                  />
-                  <label
-                    htmlFor="email"
-                    className={`absolute left-0 transition-all duration-300 pointer-events-none
-                      ${formData.email || activeField === 'email'
-                        ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                        : 'top-4 text-[var(--muted)]'}`}
-                  >
-                    {t('enroll.form.email')}
-                  </label>
-                </div>
-
-                {/* Phone */}
-                <div className="relative">
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    onFocus={() => setActiveField('phone')}
-                    onBlur={() => setActiveField(null)}
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors placeholder-transparent"
-                    placeholder={t('enroll.form.phone')}
-                  />
-                  <label
-                    htmlFor="phone"
-                    className={`absolute left-0 transition-all duration-300 pointer-events-none
-                      ${formData.phone || activeField === 'phone'
-                        ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                        : 'top-4 text-[var(--muted)]'}`}
-                  >
-                    {t('enroll.form.phone')}
-                  </label>
-                </div>
-
-                {/* Age */}
-                <div className="relative">
-                  <input
-                    type="number"
-                    name="age"
-                    id="age"
-                    min="18"
-                    max="65"
-                    value={formData.age}
-                    onChange={handleChange}
-                    onFocus={() => setActiveField('age')}
-                    onBlur={() => setActiveField(null)}
-                    required
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors placeholder-transparent"
-                    placeholder={t('enroll.form.age')}
-                  />
-                  <label
-                    htmlFor="age"
-                    className={`absolute left-0 transition-all duration-300 pointer-events-none
-                      ${formData.age || activeField === 'age'
-                        ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                        : 'top-4 text-[var(--muted)]'}`}
-                  >
-                    {t('enroll.form.age')}
-                  </label>
-                </div>
-
-                {/* Message */}
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={handleChange}
-                    onFocus={() => setActiveField('message')}
-                    onBlur={() => setActiveField(null)}
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-[var(--accent)] transition-colors resize-none placeholder-transparent"
-                    placeholder={t('enroll.form.message')}
-                  />
-                  <label
-                    htmlFor="message"
-                    className={`absolute left-0 transition-all duration-300 pointer-events-none
-                      ${formData.message || activeField === 'message'
-                        ? 'top-0 text-xs text-[var(--accent)] font-semibold'
-                        : 'top-4 text-[var(--muted)]'}`}
-                  >
-                    {t('enroll.form.message')}
-                  </label>
-                </div>
-
-                {submitError && (
-                  <p className="text-sm text-red-600 text-center" role="alert">
-                    {submitError}
-                  </p>
-                )}
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 bg-[var(--highlight)] text-white rounded-full hover:bg-orange-600 transition-all duration-300 hover-lift font-bold text-lg tracking-wide shadow-md shadow-orange-100 disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? t('enroll.form.sending') : t('enroll.form.submit')}
-                </button>
-
-                <p className="text-xs text-[var(--muted)] text-center">
-                  {t('enroll.form.privacy')}
-                </p>
-              </div>
-            </form>
-          )}
+            <p className="text-xs text-[var(--muted)] mt-6">
+              {t('enroll.form.privacy')}
+            </p>
+          </div>
         </div>
       </section>
 
